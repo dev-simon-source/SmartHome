@@ -11,6 +11,10 @@
 - alle 2 Wochen werden die Branches aktualisiert, damit jeder aktuell arbeiten kann
 
 ### Befehle
+- Repository Klonen
+```bash
+git clone https://github.com/USERNAME/YOUR-REPOSITORY
+```
 - Änderungen auf den Branch pushen
 ```bash
 git add filename
@@ -34,5 +38,5 @@ git checkout branchname
 
 - Branch updaten
 ```bash
-git update
+git pull
 ```
