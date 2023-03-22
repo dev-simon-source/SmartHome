@@ -348,3 +348,9 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Latex Ignore
+Paper/*
+!Paper/*.tex
+!Paper/Graphics/*
+!Paper/FrontBackmatter/*.tex
