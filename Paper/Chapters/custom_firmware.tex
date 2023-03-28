@@ -1,0 +1,18 @@
+\chapter{Custom Firmware}
+In diesem Kapitel geht es um die Firmware \textit{Tasmota}, die dazu verwendet wurde eine Firmware auf verschiedene Produkte zu flashen. Mit Hilfe dieser Firmware ist es möglich, dass Geräte über den Browser konfiguriert werden können und nicht mehr auf die Software der Hersteller zugergriffen werden muss. Dies hat den Vorteil, dass Geräte von verschiedenen Herstellern verwendet werden kann, ohne für jedes Produkt eine eigene Software auf dem Smartphone zu installieren.
+Die Verwendung von \textit{Tasmota} bietet hierbei auch eine Einbindung in Home Assistant an.
+
+\section{Flash Prozess}
+Der Prozess zum Flashen der neuen Software ist bei den Geäten nicht immer gleich. Bei dem hier verwendeten \textit{Sonoff Gateway} musste ein spezieller USB-Transmitter verwendet werden.
+Dieser Transmitter musste manuell an das Gateway gelötet werden, oder mit entsprechenden Pins verbunden werden (siehe Abbildung \ref{fig:sonoffpin}).
+\begin{figure}[bth] 
+    \centering
+    \includegraphics[width=0.7\textwidth]{Graphics/sonofflöten}
+    \caption{Sonoff Gateway Pin belegung}
+    \label{fig:sonoffpin}
+\end{figure}
+\\
+Bei anderen Geräten, wie \textit{Gosund EP2}, ist es hingegen möglich die Firmware zu flashen, ohne dabei die Hardware zu verändern. 
+Diese werden über WLAN geflashed und das Handy dient hierbei als übermittler. Ein Raspberry Pi erzeugt ein WLAN Netzwerk, mit dem sich das Handy verbindet. Ist das Handy verbunden wird von dem Raspberry Pi die Firmware auf ein Gerät übertragen, das sich zu diesem Zeitpunkt in \textit{paring mode} befindet übermittelt.
+Ist die Firmware auf dem Gerät geflashed, so erzeugt das Gerät ein neues WLAN Netz, über dass das Gerät konfiguriert werden kann.
+Sobald das Gerät konfiguriert wurde, kann es in \textit{Home Assistant} eingebunden und gesteuert werden. 
